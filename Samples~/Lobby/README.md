@@ -1,4 +1,6 @@
-The lobby scene expects these **game** assets (same GUIDs as the starter template):
+Drop in `Prefabs/UI/LobbyUI.prefab` and set `gameSceneNames` on the scene instance.
+
+These **game** assets still live in the project (same GUIDs as the starter template):
 
 - `NetworkManager` prefab (`CustomNetworkManager`)
 - Default network prefabs list
