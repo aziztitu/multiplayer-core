@@ -1,4 +1,4 @@
-# Azeesoft Multiplayer Core (`com.azeesoft.multiplayer-core`)
+# AZ Multiplayer Core (`com.azeesoft.multiplayer-core`)
 
 Lobby, transport switching, player identity, and character spawning for Netcode for GameObjects.
 
@@ -54,7 +54,7 @@ public partial struct PlayerSnapshot
 }
 ```
 
-2. Save the file. Unity regenerates `Assets/Generated/*.g.cs` automatically. You can also run **Tools → Azeesoft → Generate Network Serialization**.
+2. Save the file. Unity regenerates `Assets/Generated/*.g.cs` automatically. You can also run **Tools → AZ → Generate Network Serialization**.
 3. Commit both the struct and the generated file. Do not edit the `.g.cs` files.
 
 The struct **must** be `partial`. Classes are not supported.

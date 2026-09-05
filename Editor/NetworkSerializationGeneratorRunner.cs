@@ -26,7 +26,7 @@ namespace Azeesoft.Multiplayer.Editor
 
     public static class NetworkSerializationGeneratorRunner
     {
-        const string MenuPath = "Tools/Azeesoft/Generate Network Serialization";
+        const string MenuPath = "Tools/AZ/Generate Network Serialization";
         const string PendingKey = "Azeesoft.Multiplayer.NetCodeGen.Pending";
         const int MassImportSkipThreshold = 25;
 

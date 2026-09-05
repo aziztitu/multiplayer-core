@@ -1,14 +1,14 @@
 {
   "name": "com.azeesoft.multiplayer-core",
-  "version": "1.0.0",
-  "displayName": "Azeesoft Multiplayer Core",
+  "version": "1.0.1",
+  "displayName": "AZ Multiplayer Core",
   "description": "Lobby, CustomNetworkManager, player identity, spawn helpers, and INetworkSerializable codegen for NGO games.",
   "unity": "6000.0",
   "author": {
-    "name": "Azeesoft"
+    "name": "Aziztitu Murugan"
   },
   "dependencies": {
-    "com.azeesoft.utils": "1.0.0",
+    "com.azeesoft.utils": "1.0.1",
     "com.unity.netcode.gameobjects": "2.4.2",
     "com.unity.inputsystem": "1.11.2",
     "com.unity.ugui": "2.0.0",
