@@ -1,0 +1,36 @@
+{
+    "name": "Azeesoft.Multiplayer",
+    "rootNamespace": "Azeesoft.Multiplayer",
+    "references": [
+        "AZ.Utils",
+        "AZ.Utils.Netcode",
+        "Unity.Netcode.Runtime",
+        "Unity.TextMeshPro",
+        "Unity.InputSystem",
+        "Unity.Collections",
+        "Unity.Multiplayer.Playmode",
+        "Netcode.Transports.WebRTC",
+        "SteamNetworkingSockets Transport for Netcode for GameObjects",
+        "Heathen.Steamworks"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.community.netcode.transport.webrtc",
+            "expression": "",
+            "define": "AZ_MP_WEBRTC"
+        },
+        {
+            "name": "com.community.netcode.transport.steamnetworkingsockets",
+            "expression": "",
+            "define": "AZ_MP_STEAM"
+        }
+    ],
+    "noEngineReferences": false
+}

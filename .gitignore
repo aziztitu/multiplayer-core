@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.csproj
+!Tools~/NetCodeGenerator/NetCodeGenerator.csproj
+*.sln
+*.user
+.vs/
+.idea/
+Tools~/NetCodeGenerator/bin/
+Tools~/NetCodeGenerator/obj/
+Tools~/NetCodeGenerator/Dependencies/
