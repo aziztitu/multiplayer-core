@@ -62,17 +62,17 @@ namespace Azeesoft.Multiplayer
         {
             get
             {
-                if (LobbyManager.Instance)
+                if (SimpleLobbyManager.Instance)
                 {
-                    return LobbyManager.Instance.SelectedGameSceneName.Value.ToString();
+                    return SimpleLobbyManager.Instance.SelectedGameSceneName.Value.ToString();
                 }
                 return "";
             }
             private set
             {
-                if (LobbyManager.Instance)
+                if (SimpleLobbyManager.Instance)
                 {
-                    LobbyManager.Instance.SelectedGameSceneName.Value = value;
+                    SimpleLobbyManager.Instance.SelectedGameSceneName.Value = value;
                 }
             }
         }
@@ -137,9 +137,9 @@ namespace Azeesoft.Multiplayer
                 NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoaded;
             }
 
-            if (PlayerNetworkIdentity.Instances.TryGetValue(NetworkManager.Singleton.LocalClientId, out var playerNetworkIdentity))
+            if (NetworkPlayerIdentities.TryGet(NetworkManager.Singleton.LocalClientId, out var playerNetworkIdentity))
             {
-                PlayerNameInput.text = playerNetworkIdentity.PlayerName.Value.ToString();
+                PlayerNameInput.text = playerNetworkIdentity.PlayerName;
             }
 
             PlayerNameInput.onValueChanged.AddListener((playerName) =>
@@ -149,9 +149,9 @@ namespace Azeesoft.Multiplayer
                     return;
                 }
 
-                if (PlayerNetworkIdentity.Instances.TryGetValue(NetworkManager.Singleton.LocalClientId, out var identity))
+                if (NetworkPlayerIdentities.TryGet(NetworkManager.Singleton.LocalClientId, out var identity))
                 {
-                    identity.PlayerName.Value = playerName;
+                    identity.PlayerName = playerName;
                 }
             });
         }
@@ -304,7 +304,7 @@ namespace Azeesoft.Multiplayer
 
         void SpawnLobbyManager()
         {
-            if (!NetworkManager.Singleton.IsHost || LobbyManager.Instance != null)
+            if (!NetworkManager.Singleton.IsHost || SimpleLobbyManager.Instance != null)
             {
                 return;
             }

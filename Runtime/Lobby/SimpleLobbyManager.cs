@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Azeesoft.Multiplayer
 {
-    public class LobbyManager : SingletonNetworkBehaviour<LobbyManager>
+    public class SimpleLobbyManager : SingletonNetworkBehaviour<SimpleLobbyManager>
     {
         [FormerlySerializedAs("SelectedTestGameSceneName")]
         public NetworkVariable<FixedString128Bytes> SelectedGameSceneName = new("");

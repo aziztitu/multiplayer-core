@@ -55,9 +55,9 @@ public class PlayerCharacterSpawnGroup
     }
 }
 
-public class PlayerCharacterSpawner : NetworkBehaviour
+public class SimplePlayerCharacterSpawner : NetworkBehaviour
 {
-    public static PlayerCharacterSpawner Instance { get; private set; }
+    public static SimplePlayerCharacterSpawner Instance { get; private set; }
 
     public NetworkObject playerCharacterPrefab;
     public PlayerCharacterSpawnGroup[] SpawnGroups;
