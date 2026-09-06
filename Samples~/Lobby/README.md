@@ -1,4 +1,4 @@
-Drop in `Prefabs/UI/LobbyUI.prefab` and set `gameSceneNames` on the scene instance.
+Drop in `Prefabs/UI/SimpleLobbyUI.prefab` and set `gameSceneNames` on the scene instance.
 
 These **game** assets still live in the project (same GUIDs as the starter template):
 

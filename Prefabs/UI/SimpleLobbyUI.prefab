@@ -1341,7 +1341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4065829936176128737}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: Join
         m_Mode: 1
         m_Arguments:
@@ -3696,7 +3696,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4065829936176128737}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: LeaveLobby
         m_Mode: 1
         m_Arguments:
@@ -4171,7 +4171,7 @@ GameObject:
   - component: {fileID: 216741990794901048}
   - component: {fileID: 4065829936176128737}
   m_Layer: 5
-  m_Name: LobbyUI
+  m_Name: SimpleLobbyUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4351,7 +4351,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4065829936176128737}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -4623,7 +4623,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4065829936176128737}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: Host
         m_Mode: 1
         m_Arguments:
@@ -5693,7 +5693,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4065829936176128737}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:

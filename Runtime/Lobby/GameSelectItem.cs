@@ -22,12 +22,12 @@ namespace Azeesoft.Multiplayer
 
         void Update()
         {
-            if (!LobbyUI.Instance)
+            if (!SimpleLobbyUI.Instance)
             {
                 return;
             }
 
-            background.color = LobbyUI.Instance.SelectedGameSceneName == sceneNameText.text ? selectedColor : regularColor;
+            background.color = SimpleLobbyUI.Instance.SelectedGameSceneName == sceneNameText.text ? selectedColor : regularColor;
         }
     }
 }

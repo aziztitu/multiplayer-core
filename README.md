@@ -16,7 +16,7 @@ Also add NGO, and the Steam / WebRTC transport packages you need. This package d
 ## What you get
 
 - `CustomNetworkManager` — singleton + `UseTransport<T>()`
-- `LobbyUI` prefab / `SimpleLobbyManager` — host/join, lobby code, player name, start game
+- `SimpleLobbyUI` prefab / `SimpleLobbyManager` — host/join, lobby code, player name, start game
 - `SimplePlayerCharacterSpawner` — spawn a game-specific pawn per client
 - `SteamCustomTransport`, `ClientNetworkAnimator`, `AutoHostOrJoinSession` (MPPM auto host/join in the Editor)
 - `INetworkPlayerIdentity` — games implement this (see the starter's `PlayerNetworkIdentity`)

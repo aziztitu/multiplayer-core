@@ -2203,7 +2203,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 122271572}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: Join
         m_Mode: 1
         m_Arguments:
@@ -2438,7 +2438,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 122271572}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -2571,7 +2571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 122271572}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: LeaveLobby
         m_Mode: 1
         m_Arguments:
@@ -3409,7 +3409,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 122271572}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -5120,7 +5120,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 122271572}
-        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.LobbyUI, Azeesoft.Multiplayer
+        m_TargetAssemblyTypeName: Azeesoft.Multiplayer.SimpleLobbyUI, Azeesoft.Multiplayer
         m_MethodName: Host
         m_Mode: 1
         m_Arguments:

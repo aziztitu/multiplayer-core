@@ -22,7 +22,7 @@ using Netcode.Transports;
 
 namespace Azeesoft.Multiplayer
 {
-    public class LobbyUI : SingletonMonoBehaviour<LobbyUI>
+    public class SimpleLobbyUI : SingletonMonoBehaviour<SimpleLobbyUI>
     {
         public enum TransportType
         {
