@@ -1,8 +1,8 @@
 {
   "name": "com.azeesoft.multiplayer-core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "displayName": "AZ Multiplayer Core",
-  "description": "Lobby UI, CustomNetworkManager, spawn helpers, and INetworkSerializable codegen for NGO games.",
+  "description": "AZNetworkManager, spawn helpers, and INetworkSerializable codegen for NGO games.",
   "unity": "6000.0",
   "author": {
     "name": "Aziztitu Murugan"
@@ -13,12 +13,5 @@
     "com.unity.inputsystem": "1.11.2",
     "com.unity.ugui": "2.0.0",
     "com.unity.multiplayer.playmode": "1.3.3"
-  },
-  "samples": [
-    {
-      "displayName": "Lobby",
-      "description": "Connect screen, lobby, and host start-game flow.",
-      "path": "Samples~/Lobby"
-    }
-  ]
+  }
 }

@@ -1,6 +1,6 @@
 # AZ Multiplayer Core (`com.azeesoft.multiplayer-core`)
 
-Lobby, transport switching, and spawn helpers for Netcode for GameObjects.
+Transport switching, spawn helpers, and network serialization for Netcode for GameObjects.
 
 ## Install
 
@@ -15,19 +15,16 @@ Also add NGO, and the Steam / WebRTC transport packages you need. This package d
 
 ## What you get
 
-- `CustomNetworkManager` — singleton + `UseTransport<T>()`
-- `SimpleLobbyUI` prefab / `SimpleLobbyManager` — host/join, lobby code, player name, start game
+- `AZNetworkManager` — singleton + `UseTransport<T>()`
 - `SimplePlayerCharacterSpawner` — spawn a game-specific pawn per client
 - `SteamCustomTransport`, `ClientNetworkAnimator`, `AutoHostOrJoinSession` (MPPM auto host/join in the Editor)
 - `INetworkPlayerIdentity` — games implement this (see the starter's `PlayerNetworkIdentity`)
 - `NetworkPushableObject` — server-authoritative rigidbody push via `Push_Rpc`
 - **NetCodeGenerator** — Editor menu that writes `INetworkSerializable` + `IEquatable<T>` for marked structs
 
-`NetworkManager`, the default network prefabs list, `PlayerNetworkIdentity`, and `PauseMenu` belong in the game project so you can edit them.
+`NetworkManager`, the default network prefabs list, `PlayerNetworkIdentity`, `PauseMenu`, and lobby UI belong in the game project so you can edit them. See the starter template for a connect screen, lobby roster, and host start-game flow.
 
 `com.unity.multiplayer.playmode` is a package dependency, so Unity installs it with this package.
-
-Import the **Lobby** sample for a ready scene, or use the starter template. Set `gameSceneNames` to one scene for a standalone game, or several for a picker.
 
 `PlayerCharacter` (third-person avatar) is not in this package — each game supplies its own pawn.
 

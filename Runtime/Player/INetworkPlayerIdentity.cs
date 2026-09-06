@@ -12,6 +12,8 @@ namespace Azeesoft.Multiplayer
     {
         static readonly Dictionary<ulong, INetworkPlayerIdentity> instances = new();
 
+        public static IEnumerable<INetworkPlayerIdentity> All => instances.Values;
+
         public static bool TryGet(ulong clientId, out INetworkPlayerIdentity identity)
         {
             return instances.TryGetValue(clientId, out identity);

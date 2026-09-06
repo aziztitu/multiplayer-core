@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Azeesoft.Multiplayer
 {
-public class CustomNetworkManager : NetworkManager
+public class AZNetworkManager : NetworkManager
 {
-    public static CustomNetworkManager Instance => Singleton as CustomNetworkManager;
+    public static AZNetworkManager Instance => Singleton as AZNetworkManager;
 
     public NetworkTransport CurrentNetworkTransport => NetworkConfig.NetworkTransport;
 

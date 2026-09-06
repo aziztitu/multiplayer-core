@@ -1,5 +1,5 @@
 using System.Linq;
-
+using Unity.Multiplayer.PlayMode;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -25,8 +25,7 @@ namespace Azeesoft.Multiplayer
         void HostOrJoin()
         {
             var networkManager = NetworkManager.Singleton;
-            var mppmTags = Unity.Multiplayer.PlayMode.CurrentPlayer.ReadOnlyTags();
-            if (mppmTags.Contains("Host"))
+            if (CurrentPlayer.Tags.Contains("Host"))
             {
                 networkManager.StartHost();
             }
