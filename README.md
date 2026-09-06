@@ -4,11 +4,11 @@ Transport switching, spawn helpers, and network serialization for Netcode for Ga
 
 ## Install
 
-In the game project's `Packages/manifest.json` (path is relative to the `Packages` folder):
+In the game project's `Packages/manifest.json`:
 
 ```json
-"com.azeesoft.utils": "file:../../az-utils",
-"com.azeesoft.multiplayer-core": "file:../../multiplayer-core"
+"com.azeesoft.utils": "https://github.com/aziztitu/az-utils.git#1.0.2",
+"com.azeesoft.multiplayer-core": "https://github.com/aziztitu/multiplayer-core.git#1.0.5"
 ```
 
 Also add NGO, and the Steam / WebRTC transport packages you need. This package does not vendor those transports.

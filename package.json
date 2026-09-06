@@ -1,6 +1,6 @@
 {
   "name": "com.azeesoft.multiplayer-core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "displayName": "AZ Multiplayer Core",
   "description": "AZNetworkManager, spawn helpers, and INetworkSerializable codegen for NGO games.",
   "unity": "6000.0",
