@@ -63,7 +63,10 @@ public class SimplePlayerCharacterSpawner : NetworkBehaviour
     public PlayerCharacterSpawnGroup[] SpawnGroups;
     public bool AutoSpawn = true;
 
-    private bool initializedHost = false;
+    [Tooltip("With AutoSpawn on, also spawn a character for clients that connect after the level has loaded. Turn off for matches that should not accept players mid-game.")]
+    public bool SpawnLateJoiners = true;
+
+    private bool initializedServer = false;
 
     private int nextSpawnGroupIndex = 0;
     private Dictionary<ulong, NetworkObject> spawnedPlayerCharacters = new();
@@ -106,15 +109,17 @@ public class SimplePlayerCharacterSpawner : NetworkBehaviour
             SpawnGroups[i].Init(i);
         }
 
-        if (IsHost)
+        // IsServer covers both a player-hosted session and a dedicated (headless) server
+        if (IsServer)
         {
-            if (initializedHost)
+            if (initializedServer)
             {
                 return;
             }
 
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
-            initializedHost = true;
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
+            initializedServer = true;
         }
 
         NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoaded;
@@ -122,7 +127,7 @@ public class SimplePlayerCharacterSpawner : NetworkBehaviour
 
     private void HandleSceneLoaded(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
-        if (IsHost)
+        if (IsServer)
         {
             if (AutoSpawn)
             {
@@ -133,9 +138,30 @@ public class SimplePlayerCharacterSpawner : NetworkBehaviour
 
     void OnClientConnected(ulong clientId)
     {
-        if (AutoSpawn)
+        if (AutoSpawn && SpawnLateJoiners)
         {
             SpawnPlayerCharacter(clientId);
+        }
+    }
+
+    void OnClientDisconnected(ulong clientId)
+    {
+        // NGO destroys the character with its owner; forget it here so the client can be spawned again if it rejoins
+        ForgetClient(clientId);
+    }
+
+    private void ForgetClient(ulong clientId)
+    {
+        spawnedPlayerCharacters.Remove(clientId);
+
+        if (playerGroupMap.TryGetValue(clientId, out var groupIndex))
+        {
+            if (groupIndex >= 0 && groupIndex < SpawnGroups.Length)
+            {
+                SpawnGroups[groupIndex].SpawnedClients.Remove(clientId);
+            }
+
+            playerGroupMap.Remove(clientId);
         }
     }
 
@@ -218,23 +244,40 @@ public class SimplePlayerCharacterSpawner : NetworkBehaviour
 
     public void DestroyAllSpawnedCharacters()
     {
-        if (!NetworkManager.Singleton.IsHost)
+        if (!NetworkManager.Singleton.IsServer)
         {
             return;
         }
 
         foreach (var character in spawnedPlayerCharacters)
         {
-            character.Value.Despawn();
+            if (character.Value != null && character.Value.IsSpawned)
+            {
+                character.Value.Despawn();
+            }
+        }
+
+        // clear the bookkeeping too, otherwise SpawnPlayerCharacter would refuse to respawn these clients
+        spawnedPlayerCharacters.Clear();
+        playerGroupMap.Clear();
+        foreach (var group in SpawnGroups)
+        {
+            group.SpawnedClients.Clear();
         }
     }
 
     public override void OnNetworkDespawn()
     {
-        if (IsHost)
+        if (initializedServer)
         {
             Debug.Log("Cleaning up level...");
-            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+            if (NetworkManager.Singleton != null)
+            {
+                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
+            }
+
+            initializedServer = false;
         }
 
         NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoaded;
