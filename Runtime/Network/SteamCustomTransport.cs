@@ -57,7 +57,7 @@ public class SteamCustomTransport : NetworkTransport
         #endregion
 #else
         #region Server
-        Debug.Error("Auto initialization is not supported for Server. Please do it manually.");
+        Debug.LogError("Auto initialization is not supported for Server. Please do it manually.");
         #endregion
 #endif
 
