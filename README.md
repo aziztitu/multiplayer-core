@@ -8,7 +8,7 @@ In the game project's `Packages/manifest.json`:
 
 ```json
 "com.azeesoft.utils": "https://github.com/aziztitu/az-utils.git#1.0.2",
-"com.azeesoft.multiplayer-core": "https://github.com/aziztitu/multiplayer-core.git#1.0.6"
+"com.azeesoft.multiplayer-core": "https://github.com/aziztitu/multiplayer-core.git#1.0.7"
 ```
 
 Also add NGO, and the Steam / WebRTC transport packages you need. This package does not vendor those transports.
