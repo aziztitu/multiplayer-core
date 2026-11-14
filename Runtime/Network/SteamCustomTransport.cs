@@ -30,6 +30,15 @@ public class SteamCustomTransport : NetworkTransport
 
     private static bool initialized = false;
 
+    // Statics survive from one play session to the next when the editor is set not to reload the
+    // domain on entering play mode. Steam itself is shut down when a session ends, so the flag has
+    // to be cleared too, or Steam would never be initialised again.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ResetStatics()
+    {
+        initialized = false;
+    }
+
     void Start()
     {
 #if !DISABLESTEAMWORKS
@@ -48,6 +57,13 @@ public class SteamCustomTransport : NetworkTransport
         }
 
 #if !DISABLESTEAMWORKS
+
+        // something else (for example the game itself) may already have started Steam
+        if (App.Initialized)
+        {
+            initialized = true;
+            return;
+        }
 
         App.isDebugging = EnableDebugging;
 
